@@ -48,7 +48,7 @@ const HEADER = `
 </div>
 `;
 
-function loadHeader() {
+export function loadHeader() {
   const header_el = document.getElementById("header");
 
   header_el.outerHTML = HEADER;
