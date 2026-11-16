@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Basis SEO & Seiten-Infos -->
+  <title>Seitentitel | Markenname</title>
+  <meta name="description" content="Kurze und prägnante Beschreibung der Seite für Suchmaschinen (max. 155 Zeichen)." />
+  <meta name="keywords" content="Keyword1, Keyword2, Keyword3" />
+  <meta name="author" content="Dein Name oder Unternehmen" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://deine-domain.de" />
+
+  <!-- Favicons & App Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph (Facebook, Discord, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Markenname" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://deine-domain.de" />
+  <meta property="og:title" content="Seitentitel | Markenname" />
+  <meta property="og:description" content="Beschreibung der Seite für Social-Media-Vorschauen." />
+  <meta property="og:image" content="https://deine-domain.deog-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bildbeschreibung für Barrierefreiheit" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@deinHandle" />
+  <meta name="twitter:creator" content="@deinHandle" />
+  <meta name="twitter:title" content="Seitentitel | Markenname" />
+  <meta name="twitter:description" content="Beschreibung der Seite für Twitter/X-Vorschauen." />
+  <meta name="twitter:image" content="https://deine-domain.deog-image.jpg" />
+  <meta name="twitter:image:alt" content="Bildbeschreibung für Twitter/X" />
+
+  <!-- daisyUI & Themes -->
+  <link href="https://jsdelivr.net" rel="stylesheet" type="text/css" />
+  <link href="https://jsdelivr.net/themes.css" rel="stylesheet" type="text/css" />
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://jsdelivr.net"></script>
+
+  <!-- Font Awesome 7.3.1 -->
+  <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Prüft im Root auf /css/index.css und bindet sie ein -->
+  <script>
+    (async () => {
+      const path = '/css/index.css';
+      try {
+        const res = await fetch(path, { method: 'HEAD' });
+        if (res.ok) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = path;
+          document.head.appendChild(link);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <h1>hi</h1>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
