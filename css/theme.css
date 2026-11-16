@@ -34,3 +34,46 @@
   --depth: 1;
   --noise: 0;
 }
+
+/* Custom daisyUI theme inspired by the official Unreal Engine branding. */
+[data-theme="unreal-dark"] {
+  color-scheme: dark;
+
+  /* Base */
+  --color-base-100: #161617;
+  --color-base-200: #101012;
+  --color-base-300: #080809;
+  --color-base-content: #E2E3E4;
+
+  /* Brand colors */
+  --color-primary: #00ADEF;
+  --color-primary-content: #06131A;
+  --color-secondary: #007EBF;
+  --color-secondary-content: #FFFFFF;
+  --color-accent: #F7931D;
+  --color-accent-content: #17110A;
+
+  /* Neutral */
+  --color-neutral: #313233;
+  --color-neutral-content: #E2E3E4;
+
+  /* Status */
+  --color-info: #00ADEF;
+  --color-info-content: #06131A;
+  --color-success: #39B982;
+  --color-success-content: #071B12;
+  --color-warning: #F7931D;
+  --color-warning-content: #17110A;
+  --color-error: #E05252;
+  --color-error-content: #FFFFFF;
+
+  /* Shape and sizing */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
