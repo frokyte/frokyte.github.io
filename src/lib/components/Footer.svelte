@@ -9,6 +9,7 @@
     <nav class="flex flex-row items-center gap-7 sm:place-self-center sm:justify-self-end" aria-label="Social media">
       <a class="social-link" href="https://www.instagram.com/frokyte/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       <a class="social-link" href="https://discord.gg/" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      <a class="social-link" href="https://github.com/frokyte" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
     </nav>
   </div>
 </footer>
