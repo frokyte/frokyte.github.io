@@ -74,7 +74,7 @@ const DEFAULT_NAVBAR = {
 };
 
 function currentPagePath() {
-  const path = window.location.pathname.replace(/\\/+$/, "") || "/";
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
   return path;
 }
 
