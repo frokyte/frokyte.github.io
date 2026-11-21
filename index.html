@@ -1,172 +1,49 @@
 <!doctype html>
-<html lang="de" data-theme="unreal-dark">
+<html lang="en" data-theme="unreal-dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-
-  <title>Frokyte — FADE Engine</title>
-  <meta name="description" content="Frokyte entwickelt die FADE Engine und kreative Software für die nächste Generation interaktiver Erlebnisse.">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark">
+  <title>Frokyte — Independent Creative Studio</title>
+  <meta name="description" content="Frokyte is an independent creative studio building original games, tools and interactive experiences.">
   <link rel="canonical" href="https://frokyte.github.io/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:site_name" content="Frokyte">
-  <meta property="og:title" content="Frokyte — FADE Engine">
-  <meta property="og:description" content="Let's FADE up your Engine.">
-  <meta property="og:url" content="https://frokyte.github.io/">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Frokyte — FADE Engine">
-  <meta name="twitter:description" content="Let's FADE up your Engine.">
-
-  <!-- daisyUI 5 and Tailwind CSS 4 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5">
-  <link rel="stylesheet" href="./css/index.css">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Frokyte"><meta property="og:title" content="Frokyte — Independent Creative Studio"><meta property="og:description" content="Independent minds. Original experiences.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5"><link rel="stylesheet" href="./css/index.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- Icon libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body class="bg-base-200 text-base-content">
   <div id="header"></div>
-
   <main class="max-w-none">
-    <!-- HERO -->
-    <section class="relative isolate min-h-[680px] overflow-hidden bg-[#08090c] text-white">
-      <video class="absolute inset-0 -z-20 h-full w-full object-cover opacity-65"
-        title="FADE Engine environment preview"
-        crossorigin="anonymous"
-        playsinline
-        autoplay
-        muted
-        loop
-        tabindex="-1">
-        <source src="https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/cmsp5hwz774lv07n16duj74fg" type="video/mp4">
-      </video>
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/75 to-black/15"></div>
-      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-transparent to-black/10"></div>
-
-      <div class="mx-auto flex min-h-[680px] max-w-[1440px] items-center px-6 py-28 sm:px-10 lg:px-16">
-        <div class="max-w-3xl">
-          <p class="mb-7 text-xs font-bold uppercase tracking-[.3em] text-primary sm:text-sm">
-            Introducing FADE Engine
-          </p>
-          <h1 class="font-akt text-5xl font-bold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
-            Let's FADE up<br>your Engine.
-          </h1>
-          <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
-            Frokyte's brand-new FADE Engine is here to rock — and we're just at the start of our journey.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a href="#waitlist" class="btn btn-primary btn-lg rounded-md px-8">Join Waitlist</a>
-            <a href="#about" class="btn btn-outline btn-lg rounded-md border-white/40 text-white hover:border-white hover:bg-white hover:text-black">Discover FADE</a>
-          </div>
-          <p class="mt-8 text-xs font-medium uppercase tracking-widest text-white/40">
-            A new kind of creation experience
-          </p>
-        </div>
+    <section id="studio" class="relative isolate flex min-h-[680px] items-center overflow-hidden bg-[#08090c] text-white">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2200&q=90" alt="" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-35">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/75 to-black/20"></div>
+      <div class="mx-auto w-full max-w-[1440px] px-6 py-32 sm:px-10 lg:px-16">
+        <p class="mb-7 text-xs font-bold uppercase tracking-[.3em] text-primary sm:text-sm">Independent creative studio</p>
+        <h1 class="font-akt max-w-5xl text-6xl font-bold leading-[.98] tracking-tight sm:text-7xl lg:text-8xl">We build worlds.<br>We create what's next.</h1>
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/65 sm:text-xl">Frokyte is an independent studio exploring the space between games, technology and creative software. We turn ambitious ideas into things people can experience.</p>
+        <div class="mt-10 flex flex-wrap gap-3"><a href="#work" class="btn btn-primary btn-lg rounded-md px-8">Explore our work</a><a href="#contact" class="btn btn-outline btn-lg rounded-md border-white/40 text-white hover:border-white hover:bg-white hover:text-black">Get in touch</a></div>
       </div>
     </section>
-
-    <!-- INTRO -->
-    <section id="about" class="mx-auto max-w-[1440px] px-6 py-28 sm:px-10 lg:px-16 lg:py-36">
-      <div class="max-w-3xl">
-        <p class="text-xs font-bold uppercase tracking-[.25em] text-primary sm:text-sm">The next chapter</p>
-        <h2 class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
-          A new engine.<br>A new perspective.
-        </h2>
-        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-base-content/60">
-          We're building FADE Engine with one goal in mind: giving creators a fresh foundation to bring their ideas to life.
-          This is only the beginning.
-        </p>
+    <section id="values" class="mx-auto max-w-[1440px] px-6 py-28 sm:px-10 lg:px-16 lg:py-36">
+      <div class="grid gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
+        <div><p class="text-xs font-bold uppercase tracking-[.25em] text-primary">The studio</p><h2 class="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-6xl">Small team.<br>Big ideas.</h2></div>
+        <p class="text-lg leading-relaxed text-base-content/60">We believe great experiences start with curiosity. Frokyte brings together experimentation, thoughtful engineering and creative direction to build original projects — with a focus on quality, clarity and the details that matter.</p>
+      </div>
+      <div class="mt-16 grid gap-5 md:grid-cols-3">
+        <article class="rounded-lg border border-white/10 bg-white/[.035] p-8"><i class="fa-solid fa-lightbulb text-2xl text-primary"></i><h3 class="mt-7 text-2xl font-bold">Explore</h3><p class="mt-3 leading-relaxed text-base-content/55">We question familiar approaches and explore new possibilities across interactive media and software.</p></article>
+        <article class="rounded-lg border border-white/10 bg-white/[.035] p-8"><i class="fa-solid fa-code text-2xl text-primary"></i><h3 class="mt-7 text-2xl font-bold">Engineer</h3><p class="mt-3 leading-relaxed text-base-content/55">We care about solid foundations, purposeful tools and technology that empowers creators.</p></article>
+        <article class="rounded-lg border border-white/10 bg-white/[.035] p-8"><i class="fa-solid fa-wand-magic-sparkles text-2xl text-primary"></i><h3 class="mt-7 text-2xl font-bold">Create</h3><p class="mt-3 leading-relaxed text-base-content/55">We shape ideas into distinctive experiences, products and projects worth spending time with.</p></article>
       </div>
     </section>
-
-    <!-- FEATURE GRID -->
-    <section id="features" class="mx-auto max-w-[1440px] px-6 pb-28 sm:px-10 lg:px-16 lg:pb-36">
-      <div class="grid gap-5 md:grid-cols-2">
-        <article class="group relative isolate min-h-[420px] overflow-hidden rounded-lg bg-[#202126]">
-          <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=85"
-            alt="Atmospheric digital environment" class="absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
-          <div class="flex min-h-[420px] flex-col justify-end p-8 sm:p-12">
-            <p class="text-xs font-bold uppercase tracking-[.2em] text-white/50">01 / Creation</p>
-            <h3 class="mt-4 text-3xl font-bold sm:text-4xl">Built to create.</h3>
-            <p class="mt-4 max-w-md leading-relaxed text-white/65">A creative foundation designed to turn ambitious ideas into interactive experiences.</p>
-          </div>
-        </article>
-
-        <article class="group relative isolate min-h-[420px] overflow-hidden rounded-lg bg-[#202126]">
-          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1400&q=85"
-            alt="Abstract digital technology" class="absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
-          <div class="flex min-h-[420px] flex-col justify-end p-8 sm:p-12">
-            <p class="text-xs font-bold uppercase tracking-[.2em] text-white/50">02 / Technology</p>
-            <h3 class="mt-4 text-3xl font-bold sm:text-4xl">Made for what's next.</h3>
-            <p class="mt-4 max-w-md leading-relaxed text-white/65">We're exploring new workflows and tools for the next generation of creators.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products" class="bg-[#191a1d]">
+    <section id="work" class="bg-[#191a1d]">
       <div class="mx-auto max-w-[1440px] px-6 py-28 sm:px-10 lg:px-16 lg:py-36">
-        <div class="max-w-3xl">
-          <p class="text-xs font-bold uppercase tracking-[.25em] text-primary sm:text-sm">The Frokyte ecosystem</p>
-          <h2 class="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">Tools for curious minds.</h2>
-          <p class="mt-7 text-lg leading-relaxed text-white/55">
-            FADE Engine is part of a growing collection of projects built around experimentation, development, and creativity.
-          </p>
-        </div>
-
-        <div class="mt-14 grid gap-4 md:grid-cols-2">
-          <a href="#waitlist" class="card rounded-lg border border-white/10 bg-white/[.035] transition hover:bg-white/[.07]">
-            <div class="card-body p-8 sm:p-10">
-              <div class="flex items-center justify-between">
-                <span class="badge badge-primary badge-outline">In development</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-white/40"></i>
-              </div>
-              <h3 class="mt-8 text-3xl font-bold">FADE Engine</h3>
-              <p class="max-w-md text-base leading-relaxed text-white/55">Our upcoming engine. A new foundation for building interactive worlds and experiences.</p>
-              <span class="mt-5 font-semibold text-primary">Join the waitlist <i class="fa-solid fa-arrow-right ml-2"></i></span>
-            </div>
-          </a>
-
-          <a href="https://rebase.js.org/" class="card rounded-lg border border-white/10 bg-white/[.035] transition hover:bg-white/[.07]">
-            <div class="card-body p-8 sm:p-10">
-              <div class="flex items-center justify-between">
-                <span class="badge badge-ghost">Developer tools</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-white/40"></i>
-              </div>
-              <h3 class="mt-8 text-3xl font-bold">RebaseJS</h3>
-              <p class="max-w-md text-base leading-relaxed text-white/55">A lightweight JavaScript toolkit focused on a straightforward, component-friendly development experience.</p>
-              <span class="mt-5 font-semibold text-primary">Explore RebaseJS <i class="fa-solid fa-arrow-right ml-2"></i></span>
-            </div>
-          </a>
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-primary">Selected projects</p><h2 class="mt-6 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Ideas in progress.</h2>
+        <div class="mt-14 grid gap-5 md:grid-cols-2">
+          <a href="./fadeengine/" class="group relative isolate flex min-h-[440px] flex-col justify-end overflow-hidden rounded-lg bg-[#090a0d] p-8 sm:p-12"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1400&q=85" alt="" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-45 transition duration-700 group-hover:scale-105"><div class="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/40 to-transparent"></div><span class="text-xs font-bold uppercase tracking-[.2em] text-primary">Technology / In development</span><h3 class="mt-4 text-4xl font-bold">FADE Engine</h3><p class="mt-4 max-w-md leading-relaxed text-white/65">A new foundation for building interactive worlds and experiences.</p><span class="mt-7 font-semibold">Discover FADE Engine <i class="fa-solid fa-arrow-right ml-2"></i></span></a>
+          <a href="https://rebase.js.org/" class="group flex min-h-[440px] flex-col justify-end rounded-lg border border-white/10 bg-[#101114] p-8 transition hover:bg-white/[.06] sm:p-12"><span class="text-xs font-bold uppercase tracking-[.2em] text-primary">Developer tools</span><h3 class="mt-4 text-4xl font-bold">RebaseJS</h3><p class="mt-4 max-w-md leading-relaxed text-white/55">A lightweight JavaScript toolkit focused on a straightforward, component-friendly development experience.</p><span class="mt-7 font-semibold text-primary">Explore RebaseJS <i class="fa-solid fa-arrow-right ml-2"></i></span></a>
         </div>
       </div>
     </section>
-
-    <!-- WAITLIST CTA -->
-    <section id="waitlist" class="px-6 py-32 text-center sm:px-10">
-      <p class="text-xs font-bold uppercase tracking-[.25em] text-primary sm:text-sm">Be part of the beginning</p>
-      <h2 class="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-        The journey starts here.
-      </h2>
-      <p class="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-base-content/60">
-        Get updates about FADE Engine and be among the first to hear what's coming next.
-      </p>
-      <a href="mailto:hello@frokyte.com?subject=FADE%20Engine%20Waitlist" class="btn btn-primary btn-lg mt-9 rounded-md px-9">Join the Waitlist</a>
-    </section>
+    <section id="contact" class="px-6 py-32 text-center sm:px-10"><p class="text-xs font-bold uppercase tracking-[.25em] text-primary">Start a conversation</p><h2 class="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">Have an idea?<br>Let's talk.</h2><p class="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-base-content/60">For questions, collaborations or just to say hello, reach out to the Frokyte team.</p><a href="mailto:hello@frokyte.com" class="btn btn-primary btn-lg mt-9 rounded-md px-9">Contact Frokyte</a></section>
   </main>
-
-  <div id="footer"></div>
-
-  <script src="./js/index.js" type="module"></script>
-</body>
-</html>
+  <div id="footer"></div><script src="./js/index.js" type="module"></script>
+</body></html>
