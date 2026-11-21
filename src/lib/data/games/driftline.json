@@ -1,0 +1,14 @@
+{
+  "slug": "driftline",
+  "title": "Driftline",
+  "shortDescription": "Take the long way home in a high-speed arcade racer built around precision, flow and risk.",
+  "description": "Driftline is an arcade racing concept focused on expressive driving and compact, memorable tracks. Learn every corner, chain clean drifts and push your best runs a little further each time.\n\nThis is a sample game entry created to demonstrate the Frokyte Games catalogue and game detail layout.",
+  "status": "In development",
+  "featured": true,
+  "releaseLabel": "In development",
+  "platforms": ["PC"],
+  "genres": ["Racing", "Arcade"],
+  "ageRating": "Not yet rated",
+  "stores": [],
+  "gallery": []
+}
