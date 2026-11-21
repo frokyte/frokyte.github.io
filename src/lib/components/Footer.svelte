@@ -1,15 +1,1 @@
-<footer>
-  <div class="footer bg-base-200 p-10 text-base-content">
-    <nav><h6 class="footer-title">Products</h6><a href="/fadeengine/" class="link link-hover">FADE Engine</a><a href="https://rebase.js.org/" class="link link-hover">RebaseJS</a></nav>
-    <nav><h6 class="footer-title">Company</h6><a href="/#studio" class="link link-hover">About us</a><a href="/#contact" class="link link-hover">Contact</a></nav>
-    <nav><h6 class="footer-title">Legal</h6><a class="link link-hover" href="/legal/">Legal notice</a><a class="link link-hover" href="/privacy/">Privacy policy</a></nav>
-  </div>
-  <div class="footer items-center border-t border-white/10 bg-base-200 px-8 py-8 text-base-content sm:px-10">
-    <aside><p class="font-semibold">Frokyte Studio<br /><span class="text-sm font-normal opacity-50">Building what's next · since 2026</span></p></aside>
-    <nav class="flex flex-row items-center gap-7 sm:place-self-center sm:justify-self-end" aria-label="Social media">
-      <a class="social-link" href="https://www.instagram.com/frokyte/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a class="social-link" href="https://discord.gg/" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-      <a class="social-link" href="https://github.com/frokyte" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-    </nav>
-  </div>
-</footer>
+<footer class="border-t border-white/10 bg-[#101012] text-white"><div class="mx-auto grid max-w-[1440px] gap-12 px-6 py-16 sm:px-10 md:grid-cols-[1.5fr_1fr_1fr] lg:px-16"><div><a href="/" class="text-2xl font-black tracking-[-.06em]">FROKYTE GAMES</a><p class="mt-4 max-w-sm text-sm leading-relaxed text-white/45">Independent game development and publishing.</p></div><nav class="grid content-start gap-3 text-sm"><h2 class="mb-2 text-xs font-bold uppercase tracking-[.2em] text-white/35">Explore</h2><a href="/games/">Games</a><a href="/about/">About Frokyte</a></nav><nav class="grid content-start gap-3 text-sm"><h2 class="mb-2 text-xs font-bold uppercase tracking-[.2em] text-white/35">Legal</h2><a href="/legal/terms/">Terms of Service</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/licenses/">Licenses</a><a href="/legal/cookies/">Cookie Policy</a><a href="/legal/eula/">EULA</a><a href="/legal/community-guidelines/">Community Guidelines</a><a href="/legal/contributor-agreement/">Contributor Agreement</a></nav></div><div class="border-t border-white/10"><div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-6 py-6 text-xs text-white/35 sm:flex-row sm:justify-between sm:px-10 lg:px-16"><span>© {new Date().getFullYear()} Frokyte Games. All rights reserved.</span><span>Independent game development and publishing.</span></div></div></footer>
