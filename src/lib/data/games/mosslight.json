@@ -1,0 +1,49 @@
+{
+  "slug": "mosslight",
+  "title": "Mosslight",
+  "shortDescription": "A quiet journey through an overgrown world, where every path hides a little wonder.",
+  "description": "Mosslight is a small, atmospheric pixel-art platform adventure set in a forgotten woodland. Explore misty clearings, discover glowing caves and follow the traces of a world slowly being reclaimed by nature.\n\nThis is a fictional sample release created to demonstrate the Frokyte Games website. It is not an actual published game.",
+  "status": "Released",
+  "featured": false,
+  "releaseDate": "2026-10-31",
+  "releaseLabel": "Released",
+  "price": 0,
+  "priceLabel": "Free",
+  "platforms": [
+    "Windows",
+    "macOS",
+    "Linux"
+  ],
+  "genres": [
+    "Adventure",
+    "Platformer"
+  ],
+  "cover": "https://spritepilot.com/free-assets/backgrounds/forest/forest.png",
+  "hero": "https://spritepilot.com/free-assets/backgrounds/forest/forest.png",
+  "ageRating": "Not yet rated",
+  "stores": [],
+  "gallery": [
+    {
+      "src": "https://spritepilot.com/free-assets/backgrounds/cave/cave.png",
+      "alt": "A glowing crystal cave"
+    },
+    {
+      "src": "https://spritepilot.com/free-assets/backgrounds/night-city/night-city.png",
+      "alt": "A moonlit pixel-art city"
+    }
+  ],
+  "downloads": [
+    {
+      "label": "Sample download package",
+      "platform": "All platforms",
+      "version": "1.0.0",
+      "size": "1 KB",
+      "url": "/downloads/mosslight-demo-package.zip"
+    }
+  ],
+  "releaseNotes": [
+    "Initial sample release listing",
+    "Download archive contains a readme only; no playable build is included."
+  ],
+  "demoNotice": "Website demonstration only: this fictional sample release is not a playable game. The download is a small information archive, not a game build."
+}
