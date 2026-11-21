@@ -37,7 +37,9 @@
     closeMenus();
   }
 
-  onDestroy(() => document.body.classList.remove('overflow-hidden'));
+  onDestroy(() => {
+    if (typeof document !== 'undefined') document.body.classList.remove('overflow-hidden');
+  });
 </script>
 
 <svelte:window onkeydown={handleWindowKeydown} onclick={handleWindowClick} />
