@@ -1,6 +1,120 @@
-const isFadePage = window.location.pathname.startsWith("/fadeengine");
-const root = isFadePage ? "../" : "./";
-const fadePath = isFadePage ? "./" : "./fadeengine/";
+/**
+ * Page-specific navigation configuration.
+ *
+ * Add or edit an entry to customize the desktop navbar and mobile hamburger
+ * menu for a page. Keys are normalized URL paths ("/", "/fadeengine").
+ */
+export const NAVBAR_CONFIG = {
+  "/": {
+    brandLabel: "CREATIVE STUDIO",
+    desktopLinks: [
+      { label: "Studio", href: "#studio" },
+      { label: "Our work", href: "#work" },
+      { label: "What we do", href: "#values" },
+      { label: "Contact", href: "#contact" }
+    ],
+    desktopAction: { label: "Get in touch", href: "#contact" },
+    mobileGroups: [
+      {
+        title: "Explore",
+        items: [
+          { label: "Studio", href: "#studio" },
+          { label: "Our work", href: "#work" },
+          { label: "What we do", href: "#values" },
+          { label: "Contact", href: "#contact" }
+        ]
+      },
+      {
+        title: "Projects",
+        items: [
+          { label: "FADE Engine", href: "https://frokyte.github.io/fadeengine/" },
+          { label: "RebaseJS", href: "https://rebase.js.org/", external: true }
+        ]
+      }
+    ],
+    mobileAction: { label: "Get in touch", href: "#contact" }
+  },
+
+  "/fadeengine": {
+    brandLabel: "FADE ENGINE",
+    desktopLinks: [
+      { label: "Overview", href: "#overview" },
+      { label: "Features", href: "#features" },
+      { label: "Waitlist", href: "#waitlist" },
+      { label: "Studio", href: "https://frokyte.github.io/#studio" }
+    ],
+    desktopAction: { label: "Join Waitlist", href: "#waitlist" },
+    mobileGroups: [
+      {
+        title: "FADE Engine",
+        items: [
+          { label: "Overview", href: "#overview" },
+          { label: "Features", href: "#features" },
+          { label: "Waitlist", href: "#waitlist" }
+        ]
+      },
+      {
+        title: "Frokyte",
+        items: [
+          { label: "Frokyte Studio", href: "https://frokyte.github.io/#studio" },
+          { label: "RebaseJS", href: "https://rebase.js.org/", external: true }
+        ]
+      }
+    ],
+    mobileAction: { label: "Join Waitlist", href: "#waitlist" }
+  }
+};
+
+const DEFAULT_NAVBAR = {
+  brandLabel: "FROKYTE",
+  desktopLinks: [],
+  desktopAction: null,
+  mobileGroups: [{ title: "Navigation", items: [{ label: "Frokyte Studio", href: "https://frokyte.github.io/" }] }],
+  mobileAction: null
+};
+
+function currentPagePath() {
+  const path = window.location.pathname.replace(/\\/+$/, "") || "/";
+  return path;
+}
+
+function getPageConfig() {
+  return NAVBAR_CONFIG[currentPagePath()] || DEFAULT_NAVBAR;
+}
+
+function renderLink(item, className = "") {
+  const external = item.external ? ' target="_blank" rel="noopener noreferrer"' : "";
+  return `<li><a class="${className}" href="${item.href}"${external}>${item.label}${item.external ? ' <i class="fa-solid fa-arrow-up-right-from-square ml-auto text-xs opacity-40"></i>' : ""}</a></li>`;
+}
+
+function renderLinks(items, className = "") {
+  return items.map(item => renderLink(item, className)).join("");
+}
+
+function renderMobileGroups(groups) {
+  return groups.map(group => `
+    <section class="mb-9">
+      <h3 class="mb-3 px-3 text-xs font-bold uppercase tracking-[.2em] text-white/40">${group.title}</h3>
+      <ul class="menu menu-lg w-full gap-1 p-0 text-xl font-semibold">
+        ${renderLinks(group.items)}
+      </ul>
+    </section>
+  `).join("");
+}
+
+function renderDesktopMegaMenu(config) {
+  return `
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      ${config.mobileGroups.map(group => `
+        <section>
+          <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-white/40">${group.title}</h3>
+          <ul class="menu p-0">${renderLinks(group.items)}</ul>
+        </section>
+      `).join("")}
+    </div>
+    ${config.desktopAction ? `<div class="mt-7 border-t border-white/10 pt-5"><a href="${config.desktopAction.href}" class="btn btn-primary btn-sm rounded-md">${config.desktopAction.label}</a></div>` : ""}
+  `;
+}
 
 const HEADER = `
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#101012]/95 text-white shadow-sm backdrop-blur-xl">
@@ -15,64 +129,49 @@ const HEADER = `
           <p class="px-2 text-xs font-bold uppercase tracking-widest text-white/40">Frokyte</p>
           <h3 class="mb-3 mt-1 px-2 text-lg font-bold">Our projects</h3>
           <ul class="menu w-full">
-            <li><a href="${fadePath}" class="gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 font-black">F</span><span><span class="block font-semibold">FADE Engine</span><span class="block text-xs text-white/45">Our upcoming creation engine</span></span></a></li>
+            <li><a href="https://frokyte.github.io/fadeengine/" class="gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 font-black">F</span><span><span class="block font-semibold">FADE Engine</span><span class="block text-xs text-white/45">Our upcoming creation engine</span></span></a></li>
             <li><a href="https://rebase.js.org/" class="gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 font-black">R</span><span><span class="block font-semibold">RebaseJS</span><span class="block text-xs text-white/45">Lightweight JavaScript toolkit</span></span></a></li>
           </ul>
           <div class="divider before:bg-white/10 after:bg-white/10"></div>
-          <a href="${root}#studio" class="btn btn-ghost btn-sm w-full justify-between">About Frokyte <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://frokyte.github.io/#studio" class="btn btn-ghost btn-sm w-full justify-between">About Frokyte <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <span class="mx-3 h-7 w-px bg-white/20"></span>
-      <a href="${isFadePage ? "./" : "./"}" class="text-sm font-bold tracking-tight">${isFadePage ? "FADE ENGINE" : "CREATIVE STUDIO"}</a>
+      <a data-brand-label href="https://frokyte.github.io/" class="text-sm font-bold tracking-tight">CREATIVE STUDIO</a>
     </div>
 
-    <nav class="navbar-center hidden flex-1 lg:flex">
-      <ul class="menu menu-horizontal items-center gap-1 px-2 text-sm font-medium text-white/75">
-        ${isFadePage
-          ? '<li><a href="#overview">Overview</a></li><li><a href="#features">Features</a></li><li><a href="#waitlist">Waitlist</a></li><li><a href="../#studio">Studio</a></li>'
-          : '<li><a href="#studio">Studio</a></li><li><a href="#work">Our work</a></li><li><a href="#values">What we do</a></li><li><a href="#contact">Contact</a></li>'}
-      </ul>
+    <nav class="navbar-center hidden flex-1 lg:flex" aria-label="Main navigation">
+      <ul data-desktop-links class="menu menu-horizontal items-center gap-1 px-2 text-sm font-medium text-white/75"></ul>
     </nav>
 
-    <div class="navbar-end hidden flex-1 gap-2 lg:flex">
-      ${isFadePage
-        ? '<a href="../" class="btn btn-ghost btn-sm text-white">Frokyte Studio</a><a href="#waitlist" class="btn btn-primary btn-sm rounded-md px-5">Join Waitlist</a>'
-        : '<a href="./fadeengine/" class="btn btn-ghost btn-sm text-white">FADE Engine</a><a href="#contact" class="btn btn-primary btn-sm rounded-md px-5">Get in touch</a>'}
+    <div class="navbar-end hidden flex-1 items-center justify-end gap-2 lg:flex">
+      <a data-desktop-action class="btn btn-primary btn-sm rounded-md px-5"></a>
       <div class="relative" data-desktop-menu>
         <button type="button" data-desktop-trigger aria-expanded="false" aria-controls="desktop-menu-panel" class="btn btn-ghost btn-square btn-sm text-white" aria-label="Open navigation"><i class="fa-solid fa-bars text-lg"></i></button>
-        <div id="desktop-menu-panel" data-desktop-panel class="absolute right-0 top-full z-[70] mt-4 hidden w-[min(680px,95vw)] rounded-lg border border-white/10 bg-[#191a1d] p-8 text-white shadow-2xl">
-          <div class="grid grid-cols-3 gap-8">
-            <div><h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-white/40">Discover</h3><ul class="menu p-0"><li><a href="${root}#studio">About Frokyte</a></li><li><a href="${root}#work">Our work</a></li><li><a href="${root}#contact">Contact</a></li></ul></div>
-            <div><h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-white/40">Products</h3><ul class="menu p-0"><li><a href="${fadePath}">FADE Engine</a></li><li><a href="https://rebase.js.org/">RebaseJS</a></li></ul></div>
-            <div><h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-white/40">Connect</h3><ul class="menu p-0"><li><a href="https://www.instagram.com/frokyte/">Instagram</a></li><li><a href="mailto:hello@frokyte.com">Contact</a></li></ul></div>
-          </div>
-        </div>
+        <div id="desktop-menu-panel" data-desktop-panel class="absolute right-0 top-full z-[70] mt-4 hidden w-[min(680px,95vw)] rounded-lg border border-white/10 bg-[#191a1d] p-8 text-white shadow-2xl"></div>
       </div>
     </div>
 
-    <div class="navbar-end flex flex-1 gap-2 lg:hidden">
-      ${isFadePage ? '<a href="#waitlist" class="btn btn-primary btn-sm rounded-md">Waitlist</a>' : '<a href="#contact" class="btn btn-primary btn-sm rounded-md">Contact</a>'}
+    <div class="navbar-end flex flex-1 justify-end lg:hidden">
       <button type="button" data-mobile-open class="btn btn-ghost btn-square text-white" aria-label="Open navigation"><i class="fa-solid fa-bars text-lg"></i></button>
     </div>
   </div>
 </header>
 
 <div data-mobile-menu class="mobile-nav fixed inset-0 z-[100] hidden overflow-y-auto overscroll-contain bg-[#101012] text-white" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <div class="flex min-h-20 items-center justify-between border-b border-white/10 px-6">
-    <a href="${root}" class="flex items-center gap-3"><span class="text-2xl font-black">FROKYTE</span><span class="h-7 w-px bg-white/20"></span><span class="text-sm font-bold">${isFadePage ? "FADE ENGINE" : "STUDIO"}</span></a>
+  <div class="sticky top-0 z-10 flex min-h-20 items-center justify-between border-b border-white/10 bg-[#101012]/95 px-6 backdrop-blur-xl">
+    <a href="https://frokyte.github.io/" class="flex items-center gap-3"><span class="text-2xl font-black">FROKYTE</span><span class="h-7 w-px bg-white/20"></span><span data-mobile-brand-label class="text-sm font-bold">STUDIO</span></a>
     <button type="button" data-mobile-close class="btn btn-ghost btn-square btn-lg text-white" aria-label="Close navigation"><i class="fa-solid fa-xmark text-xl"></i></button>
   </div>
-  <div class="mx-auto max-w-2xl px-6 py-10">
-    <p class="mb-5 text-xs font-bold uppercase tracking-[.2em] text-white/40">Navigation</p>
-    <ul class="menu menu-lg w-full gap-2 p-0 text-xl font-semibold">
-      ${isFadePage
-        ? '<li><a href="#overview" data-mobile-link>Overview</a></li><li><a href="#features" data-mobile-link>Features</a></li><li><a href="#waitlist" data-mobile-link>Waitlist</a></li><li><a href="../#studio">Frokyte Studio</a></li>'
-        : '<li><a href="#studio" data-mobile-link>Studio</a></li><li><a href="#work" data-mobile-link>Our work</a></li><li><a href="#values" data-mobile-link>What we do</a></li><li><a href="#contact" data-mobile-link>Contact</a></li>'}
-      <li><a href="${fadePath}">FADE Engine <i class="fa-solid fa-arrow-up-right-from-square ml-auto text-sm text-white/40"></i></a></li>
-      <li><a href="https://rebase.js.org/">RebaseJS <i class="fa-solid fa-arrow-up-right-from-square ml-auto text-sm text-white/40"></i></a></li>
-    </ul>
-    <div class="divider my-8 before:bg-white/10 after:bg-white/10"></div>
-    <div class="flex flex-col gap-3"><a href="mailto:hello@frokyte.com" class="btn btn-outline btn-lg w-full border-white/25 text-white">Contact</a><a href="https://www.instagram.com/frokyte/" class="btn btn-ghost btn-lg w-full">Instagram</a></div>
+  <div class="mx-auto max-w-3xl px-6 py-10">
+    <div data-mobile-groups></div>
+    <div data-mobile-action-container class="mt-4 hidden border-t border-white/10 pt-7">
+      <a data-mobile-action class="btn btn-primary btn-lg w-full rounded-md"></a>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-6 border-t border-white/10 pt-7 text-sm text-white/55">
+      <a href="https://www.instagram.com/frokyte/" aria-label="Instagram" class="text-xl"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://discord.gg/" aria-label="Discord" class="text-xl"><i class="fa-brands fa-discord"></i></a>
+    </div>
   </div>
 </div>
 `;
@@ -80,7 +179,39 @@ const HEADER = `
 export function loadHeader() {
   const headerEl = document.getElementById("header");
   if (!headerEl) return;
+
+  const config = getPageConfig();
   headerEl.outerHTML = HEADER;
+
+  const brandLabel = document.querySelector("[data-brand-label]");
+  const mobileBrandLabel = document.querySelector("[data-mobile-brand-label]");
+  if (brandLabel) brandLabel.textContent = config.brandLabel;
+  if (mobileBrandLabel) mobileBrandLabel.textContent = config.brandLabel;
+
+  const desktopLinks = document.querySelector("[data-desktop-links]");
+  if (desktopLinks) desktopLinks.innerHTML = renderLinks(config.desktopLinks);
+
+  const desktopPanel = document.querySelector("[data-desktop-panel]");
+  if (desktopPanel) desktopPanel.innerHTML = renderDesktopMegaMenu(config);
+
+  const desktopAction = document.querySelector("[data-desktop-action]");
+  if (config.desktopAction && desktopAction) {
+    desktopAction.href = config.desktopAction.href;
+    desktopAction.textContent = config.desktopAction.label;
+  } else {
+    desktopAction?.remove();
+  }
+
+  const mobileGroups = document.querySelector("[data-mobile-groups]");
+  if (mobileGroups) mobileGroups.innerHTML = renderMobileGroups(config.mobileGroups);
+
+  const mobileActionContainer = document.querySelector("[data-mobile-action-container]");
+  const mobileAction = document.querySelector("[data-mobile-action]");
+  if (config.mobileAction && mobileAction && mobileActionContainer) {
+    mobileAction.href = config.mobileAction.href;
+    mobileAction.textContent = config.mobileAction.label;
+    mobileActionContainer.classList.remove("hidden");
+  }
 
   const productMenu = document.querySelector("[data-product-menu]");
   const productTrigger = document.querySelector("[data-product-trigger]");
@@ -88,7 +219,6 @@ export function loadHeader() {
   const productArrow = document.querySelector("[data-product-arrow]");
   const desktopMenu = document.querySelector("[data-desktop-menu]");
   const desktopTrigger = document.querySelector("[data-desktop-trigger]");
-  const desktopPanel = document.querySelector("[data-desktop-panel]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
 
   const setMenu = (panel, trigger, open) => {
@@ -98,6 +228,10 @@ export function loadHeader() {
   const setProductOpen = (open) => {
     setMenu(productPanel, productTrigger, open);
     productArrow?.classList.toggle("rotate-180", open);
+  };
+  const closeMobile = () => {
+    mobileMenu?.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
   };
 
   productTrigger?.addEventListener("click", () => setProductOpen(productPanel.classList.contains("hidden")));
@@ -115,22 +249,20 @@ export function loadHeader() {
     }
   });
 
-  const closeMobile = () => {
-    mobileMenu?.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
-  };
   document.querySelector("[data-mobile-open]")?.addEventListener("click", () => {
     mobileMenu?.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
     mobileMenu?.scrollTo(0, 0);
   });
-  document.querySelectorAll("[data-mobile-close], [data-mobile-link]").forEach((element) => {
-    element.addEventListener("click", closeMobile);
-  });
-  mobileMenu?.querySelectorAll('a[href^="#"]').forEach((link) => {
+  document.querySelectorAll("[data-mobile-close]").forEach(element => element.addEventListener("click", closeMobile));
+  mobileMenu?.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", () => {
       const target = document.querySelector(link.getAttribute("href"));
+      closeMobile();
       if (target) setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 0);
     });
+  });
+  mobileMenu?.querySelectorAll('a[href^="https://"], a[href^="mailto:"]').forEach(link => {
+    link.addEventListener("click", closeMobile);
   });
 }
