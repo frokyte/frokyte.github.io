@@ -1,0 +1,2 @@
+<script>import GamePage from '$lib/components/GamePage.svelte';let {data}=$props();</script>
+{#if data.game}<GamePage game={data.game}/>{:else}<svelte:head><title>Game not found — Frokyte Games</title></svelte:head><main class="mx-auto max-w-3xl px-6 py-32 text-center"><h1 class="text-4xl font-bold">Game not found</h1><p class="mt-4 text-white/50">This game may have moved or is not publicly listed.</p><a href="/games/" class="btn btn-primary mt-8">Back to games</a></main>{/if}

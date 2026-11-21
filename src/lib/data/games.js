@@ -1,0 +1,1 @@
+const files=import.meta.glob('./games/*.json',{eager:true,import:'default'});export const games=Object.values(files);export const featuredGames=games.filter(game=>game.featured);export function getGame(slug){return games.find(game=>game.slug===slug)}
