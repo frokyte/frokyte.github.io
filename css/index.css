@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
 @import "./theme.css";
 @import "./layout.css";
 @import "./fonts.css";
+
+.mobile-nav { -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+.mobile-nav:not(.hidden) { display: block; }
+.social-link { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; font-size: 1.65rem; color: currentColor; opacity: .8; transition: opacity .2s, transform .2s; }
+.social-link:hover { opacity: 1; transform: translateY(-2px); }
