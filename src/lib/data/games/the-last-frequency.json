@@ -1,0 +1,32 @@
+{
+  "slug": "the-last-frequency",
+  "title": "The Last Frequency",
+  "shortDescription": "A remote signal. An abandoned research station. A mystery that refuses to stay silent.",
+  "description": "The Last Frequency is a story-driven mystery adventure set on a remote island research station. Explore forgotten facilities, piece together fragmented recordings and uncover why the station's final transmission never stopped.
+
+This is a sample game entry created to demonstrate the Frokyte Games catalogue and game detail layout.",
+  "status": "In development",
+  "featured": true,
+  "releaseLabel": "In development",
+  "platforms": ["PC"],
+  "genres": ["Adventure", "Mystery", "Narrative"],
+  "ageRating": "Not yet rated",
+  "stores": [],
+  "gallery": [],
+  "systemRequirements": {
+    "minimum": {
+      "Operating system": "To be announced",
+      "Processor": "To be announced",
+      "Memory": "To be announced",
+      "Graphics": "To be announced",
+      "Storage": "To be announced"
+    },
+    "recommended": {
+      "Operating system": "To be announced",
+      "Processor": "To be announced",
+      "Memory": "To be announced",
+      "Graphics": "To be announced",
+      "Storage": "To be announced"
+    }
+  }
+}
