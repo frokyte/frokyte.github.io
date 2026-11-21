@@ -15,6 +15,9 @@
  * @property {string} [hero]
  * @property {string} [ageRating]
  * @property {{label:string,url:string}[]} [stores]
+ * @property {string} [priceLabel]
+ * @property {{label:string,platform:string,version:string,size:string,url:string}[]} [downloads]
+ * @property {string[]} [releaseNotes]
  * @property {{src:string,alt?:string}[]} [gallery]
  * @property {{minimum?:Record<string,string>,recommended?:Record<string,string>}} [systemRequirements]
  */
