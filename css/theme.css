@@ -1,5 +1,5 @@
 /* Custom daisyUI theme for the CDN setup. */
-[data-theme="frokyte-dark"] {
+[data-theme="nope-frokyte-dark"] {
   color-scheme: dark;
 
   --color-base-100: oklch(20.768% 0.039 265.754);
@@ -36,7 +36,7 @@
 }
 
 /* Custom daisyUI theme inspired by the official Unreal Engine branding. */
-[data-theme="unreal-dark"] {
+[data-theme="nope-unreal-dark"] {
   color-scheme: dark;
 
   /* Base */
